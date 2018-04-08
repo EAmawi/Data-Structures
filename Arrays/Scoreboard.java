@@ -13,11 +13,12 @@ public class Scoreboard {
     public void add(GameEntry e) {
         int newScore = e.getScore();
         if (numEntries < board.length || e.getScore() > board[numEntries - 1].getScore()) {
-            if (numEntries < board.length) {
-                numEntries++;
-            }
-
-            int j = numEntries - 1;
+//            if (numEntries < board.length) {
+//                numEntries++;
+//            }
+//
+//            int j = numEntries - 1;
+            int j = numEntries < board.length ? (++numEntries) - 1 : numEntries - 1;
             while (j > 0 && board[j - 1].getScore() < newScore) {
                 board[j - 1] = board[j];
 
